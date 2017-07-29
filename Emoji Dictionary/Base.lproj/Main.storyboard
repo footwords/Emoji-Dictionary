@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qXh-we-xoH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dVA-uC-6Rv">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -34,34 +35,37 @@
                             <constraint firstItem="dVA-uC-6Rv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="j2G-eZ-EGO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="htZ-FZ-lwD"/>
                     <connections>
                         <outlet property="frontPageTableView" destination="dVA-uC-6Rv" id="ZUi-9B-3EM"/>
+                        <segue destination="VKd-0j-aim" kind="show" identifier="moveSegue" id="N1l-EH-2Hc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="972" y="38.23088455772114"/>
         </scene>
-        <!--View Controller-->
+        <!--Definition View Controller-->
         <scene sceneID="qaf-Ov-sCt">
             <objects>
-                <viewController id="VKd-0j-aim" sceneMemberID="viewController">
+                <viewController id="VKd-0j-aim" customClass="DefinitionViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QCz-2e-d8U"/>
                         <viewControllerLayoutGuide type="bottom" id="jpG-UH-LgU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TMq-Od-ZHD">
+                    <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="TMq-Od-ZHD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSE-bg-jQV">
-                                <rect key="frame" x="78.5" y="60" width="218" height="239"/>
+                                <rect key="frame" x="78" y="104" width="218" height="239"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a piece of poop." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSN-md-fBD">
-                                <rect key="frame" x="69" y="379" width="237" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="This is a piece of poop." textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSN-md-fBD">
+                                <rect key="frame" x="16" y="351" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -70,14 +74,37 @@
                         <constraints>
                             <constraint firstItem="uSE-bg-jQV" firstAttribute="centerX" secondItem="TMq-Od-ZHD" secondAttribute="centerX" id="0Et-7m-3hA"/>
                             <constraint firstItem="uSE-bg-jQV" firstAttribute="top" secondItem="QCz-2e-d8U" secondAttribute="bottom" constant="40" id="6GD-VA-esP"/>
-                            <constraint firstItem="MSN-md-fBD" firstAttribute="top" secondItem="uSE-bg-jQV" secondAttribute="bottom" constant="80" id="NLU-2i-4Qw"/>
-                            <constraint firstItem="MSN-md-fBD" firstAttribute="centerX" secondItem="TMq-Od-ZHD" secondAttribute="centerX" id="wul-I5-E1a"/>
+                            <constraint firstItem="MSN-md-fBD" firstAttribute="trailing" secondItem="TMq-Od-ZHD" secondAttribute="trailingMargin" id="7Bc-o6-qcp"/>
+                            <constraint firstItem="MSN-md-fBD" firstAttribute="leading" secondItem="TMq-Od-ZHD" secondAttribute="leadingMargin" id="Pu2-dd-Xko"/>
+                            <constraint firstItem="MSN-md-fBD" firstAttribute="top" secondItem="uSE-bg-jQV" secondAttribute="bottom" constant="8" id="RDJ-ZM-K32"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bigEmoji" destination="uSE-bg-jQV" id="t08-In-Glo"/>
+                        <outlet property="emojiLabel" destination="MSN-md-fBD" id="846-qf-QKK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLb-ci-SZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="38"/>
+            <point key="canvasLocation" x="1805.5999999999999" y="36.431784107946029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BiA-i8-670">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qXh-we-xoH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yS1-P9-2Mw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Y0H-RV-L8N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dOL-Yu-Mzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="38"/>
         </scene>
     </scenes>
 </document>
